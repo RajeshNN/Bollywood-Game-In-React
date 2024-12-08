@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function NameTile(props) {
 
@@ -36,10 +36,13 @@ export default function NameTile(props) {
   }
 
   return (
-    <span display="flex">
+    <span>
       {props.title.split(" ").map((word, iw) => (
-        <b>{helper(word)}&nbsp;&nbsp;</b>
+        <b style={{fontSize : 40, color : "red"}}> {helper(word)}&nbsp;&nbsp;</b>
       ))}
+      <div key={props.correctGuesses.size} className="firework" id="name-tile"></div>
+      <div key={props.correctGuesses.size} className="firework" id="name-tile"></div>
+      <div key={props.correctGuesses.size} className="firework" id="name-tile"></div>
     </span>
   )
 }
