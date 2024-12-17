@@ -58,9 +58,19 @@
 
 .box
 {
-   width:400px; /* or whatever width you want. */
-   max-width:400px; /* or whatever width you want. */
-   display: inline-block;
+   width:100vw;
+   height:100vh;
+   margin:0;
+   padding:0;
+   /* display: inline-block; */
+}
+
+.tile {
+  /* height:100vh; */
+  width:100vw;
+  margin:0;
+  display:block;
+  padding:0;
 }
 
 .btn-circle {
@@ -87,7 +97,7 @@ body {
     /* linear-gradient(#808080, #000000); */
     /* #123; */
   margin: 0;
-  height: 100vh;
+  width: 100vw;
   /* overflow: hidden; */
 }
 
@@ -116,11 +126,11 @@ body {
   --color4: lime;
   --color5: rgb(237, 34, 108);
   --color6: rgb(60, 179, 64);
-  --y: -30vmin;
+  --y: -40vmin;
   --x: -50%;
-  --initialY: 40vmin;
+  --initialY: -20vmin;
   content: "";
-  animation: firework 2s 2;
+  animation: firework 1s 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -224,6 +234,145 @@ body {
 .firework:nth-child(3),
 .firework:nth-child(3)::before,
 .firework:nth-child(3)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 35vmin;
+  left: 70%;
+  top: 60%;
+  animation-delay: -0.4s;
+}
+
+@keyframes celebrations {
+  0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+  50% { width: 0.5vmin; opacity: 1; }
+  100% { width: var(--finalSize); opacity: 0; }
+}
+
+.celebrations,
+.celebrations::before,
+.celebrations::after
+{
+  --initialSize: 1vmin;
+  --finalSize: 45vmin;
+  --particleSize: 1vmin;
+  --color1: rgb(161, 70, 240);
+  --color2: rgb(131, 239, 59);
+  --color3: rgb(246, 229, 44);
+  --color4: lime;
+  --color5: rgb(237, 34, 108);
+  --color6: rgb(60, 179, 64);
+  --y: -30vmin;
+  --x: -50%;
+  --initialY: -10vmin;
+  content: "";
+  animation: celebrations 2s 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--y));
+  width: var(--initialSize);
+  aspect-ratio: 1;
+  background: 
+    
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
+   
+    
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+    
+    /* bottom right */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+    
+    /* bottom left */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+    
+    /* top left */
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+    
+    /* top right */
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+    ;
+  background-size: var(--initialSize) var(--initialSize);
+  background-repeat: no-repeat;
+}
+
+.celebrations::before {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+  transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+/*   animation: celebrationsPseudo 2s infinite; */
+}
+
+.celebrations::after {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+  transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+/*   animation: celebrationsPseudo 2s infinite; */
+}
+
+.celebrations:nth-child(2) {
+  --x: 30vmin;
+}
+
+.celebrations:nth-child(2),
+.celebrations:nth-child(2)::before,
+.celebrations:nth-child(2)::after {
+  --color1: pink;
+  --color2: violet;
+  --color3: fuchsia;
+  --color4: orchid;
+  --color5: plum;
+  --color6: lavender;  
+  --finalSize: 40vmin;
+  left: 30%;
+  top: 60%;
+  animation-delay: -0.25s;
+}
+
+.celebrations:nth-child(3) {
+  --x: -30vmin;
+  --y: -50vmin;
+}
+
+.celebrations:nth-child(3),
+.celebrations:nth-child(3)::before,
+.celebrations:nth-child(3)::after {
   --color1: cyan;
   --color2: lightcyan;
   --color3: lightblue;

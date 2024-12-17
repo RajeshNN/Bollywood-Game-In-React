@@ -38,7 +38,7 @@ export default function NameTile(props) {
   return (
     <span>
       {props.title.split(" ").map((word, iw) => (
-        <b style={{fontSize : 40, color : "red"}}> {helper(word)}&nbsp;&nbsp;</b>
+        <b style={{fontSize : 30, color : "red"}}> {helper(word)}&nbsp;&nbsp;</b>
       ))}
       <div key={props.correctGuesses.size} className="firework" id="name-tile"></div>
       <div key={props.correctGuesses.size} className="firework" id="name-tile"></div>
