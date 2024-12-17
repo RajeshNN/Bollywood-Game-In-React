@@ -36,14 +36,14 @@ export default function BollyGame(props) {
       <div className="tile">
         <img src="poster.png" alt="guess the movie" width='200' height='100'></img>
       </div>
-      <div className="container my-4 tile">
+      <div className="container my-4 tile mx-auto">
         {guesses.forEach(e => {alphaName.has(e) ? correctGuesses.add(e) : t = "" })}
         <BollyTile wrongGuesses={guesses.size - correctGuesses.size}/>
       </div>
-      <div className="container my-4 tile">
+      <div className="container my-4 tile mx-auto">
         <NameTile title={props.title} guesses={guesses} setGuesses={setGuesses} correctGuesses={correctGuesses}/>
       </div>
-      <div className="container my-4 position-absolute tile">
+      <div className="container my-4 position-absolute tile mx-auto text-center">
         <AlphabetTile guesses={guesses} setGuesses={setGuesses} stopGame={guesses.size - correctGuesses.size >= 9 || correctGuesses.size === alphaName.size} />
       </div>
       <div className="container my-4 position-absolute tile" >
