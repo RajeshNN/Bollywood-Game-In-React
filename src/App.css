@@ -268,7 +268,7 @@ body {
   --x: -50%;
   --initialY: -10vmin;
   content: "";
-  animation: celebrations 2s 5;
+  animation: celebrations 2s infinite;
   position: absolute;
   top: 50%;
   left: 50%;
